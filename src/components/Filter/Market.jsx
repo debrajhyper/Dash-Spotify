@@ -3,9 +3,9 @@ import { changeCountry } from '../../context';
 import { FormLabel, FormControl, FormControlLabel, RadioGroup, Radio } from '@mui/material';
 
 export function Market() {
-    const dispatch = useDispatch();
-    const markets = useSelector(state => state.markets);
-    const country = useSelector(state => state.country);
+    const dispatch = useDispatch(); // Redux hook to dispatch actions
+    const markets = useSelector(state => state.markets); // Get markets from Redux state
+    const country = useSelector(state => state.country); // Get selected country from Redux state
 
     return (
         <FormControl sx={{ mb: 3 }}>

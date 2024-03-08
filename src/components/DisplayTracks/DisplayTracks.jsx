@@ -10,15 +10,15 @@ import ViewHeadlineIcon from '@mui/icons-material/ViewHeadline';
 import AppsIcon from '@mui/icons-material/Apps';
 
 export function DisplayTracks() {
-    const dispatch = useDispatch();
-    const { token_type, access_token } = useSelector(state => state.userToken);
-    const [isGridView, setIsGridView] = useState(true);
+    const dispatch = useDispatch(); // Redux hook to dispatch actions
+    const { token_type, access_token } = useSelector(state => state.userToken); // Get user token details from Redux state
+    const [isGridView, setIsGridView] = useState(true); // State to toggle between grid and list view
 
-    const handleChangeView = () => {
+    const handleChangeView = () => { // Function to toggle grid/list view
         setIsGridView(!isGridView);
     }
 
-    useEffect(() => {
+    useEffect(() => { // Fetch default tracks when component mounts
         async function getDefaultTrack() {
             try {
                 const response = await fetch(DEFAULT_SEARCH_URL, {
@@ -30,15 +30,15 @@ export function DisplayTracks() {
                 });
                 const data = await response.json();
                 if (response.ok) {
-                    dispatch(addTrack(data?.artists?.items))
-                    dispatch(addFilteredTracks(data?.artists?.items))
+                    dispatch(addTrack(data?.artists?.items)); // Dispatch action to add default tracks
+                    dispatch(addFilteredTracks(data?.artists?.items)); // Dispatch action to add filtered tracks
                 }
             } catch (error) {
                 console.log(error);
             }
         }
         getDefaultTrack();
-    }, [])
+    }, []) // Empty dependency array ensures this effect runs only once
 
     return (
         <>

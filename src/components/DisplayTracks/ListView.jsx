@@ -4,7 +4,8 @@ import { Card, Box, Typography, CardContent, CardMedia, Link, IconButton, Toolti
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
 export default function ListView() {
-    const filteredTracks = useSelector(state => state.filteredTracks);
+    const filteredTracks = useSelector(state => state.filteredTracks); // Select filtered tracks from Redux state
+
     return (
         <Stack
             direction="column"
@@ -19,6 +20,7 @@ export default function ListView() {
                         variant="h4"
                         fontWeight={600}
                         mt={10}
+                        mx='auto'
                     >
                         No tracks found
                     </Typography>

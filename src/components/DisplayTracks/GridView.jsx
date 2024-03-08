@@ -4,7 +4,8 @@ import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
 export default function GridView() {
-    const filteredTracks = useSelector(state => state.filteredTracks);
+    const filteredTracks = useSelector(state => state.filteredTracks); // Get filtered tracks from Redux state
+
     return (
         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12, lg: 12 }} px={{ xs: 0, md: 2, lg: 5 }}>
             {
@@ -13,6 +14,7 @@ export default function GridView() {
                         variant="h4"
                         fontWeight={600}
                         mt={10}
+                        mx='auto'
                     >
                         No tracks found
                     </Typography>

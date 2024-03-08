@@ -3,8 +3,8 @@ import { changePopularity } from '../../context';
 import { FormControl, FormLabel, RadioGroup, FormControlLabel, Radio } from '@mui/material'
 
 export function Popularity() {
-    const dispatch = useDispatch()
-    const popularity = useSelector(state => state.popularity)
+    const dispatch = useDispatch(); // Redux hook to dispatch actions
+    const popularity = useSelector(state => state.popularity); // Get popularity filter from Redux state
 
     return (
         <FormControl sx={{ mb: 3 }}>
