@@ -38,7 +38,7 @@ export function DisplayTracks() {
             }
         }
         getDefaultTrack();
-    }, []) // Empty dependency array ensures this effect runs only once
+    }, [token_type, access_token])
 
     return (
         <>

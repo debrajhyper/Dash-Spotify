@@ -22,4 +22,3 @@ export const configs = {
     },
     body: `grant_type=client_credentials&client_id=${import.meta.env.VITE_CLIENT_ID}&client_secret=${import.meta.env.VITE_CLIENT_SECRET}`
 }
-console.log(import.meta.env.VITE_CLIENT_ID, import.meta.env.VITE_CLIENT_SECRET);
