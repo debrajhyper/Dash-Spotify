@@ -20,5 +20,6 @@ export const configs = {
     headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `grant_type=client_credentials&client_id=386d23eddd0f42298f3b63d49ca4bb7f&client_secret=aec72b3f8089489d8a5b04c680972342`
+    body: `grant_type=client_credentials&client_id=${import.meta.env.VITE_CLIENT_ID}&client_secret=${import.meta.env.VITE_CLIENT_SECRET}`
 }
+console.log(import.meta.env.VITE_CLIENT_ID, import.meta.env.VITE_CLIENT_SECRET);
